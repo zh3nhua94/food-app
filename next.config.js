@@ -1,6 +1,6 @@
-const dotenvExpand = require("dotenv-expand");
+// const dotenvExpand = require("dotenv-expand");
 
-dotenvExpand.expand({ parsed: { ...process.env } });
+// dotenvExpand.expand({ parsed: { ...process.env } });
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
