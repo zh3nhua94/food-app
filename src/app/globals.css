@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+nextjs-portal {
+	display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.slick-track {
+	display: flex !important;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.slick-slide {
+	height: inherit !important;
+
+	div {
+		height: 100%;
+	}
+}
+
+.slick-prev:before,
+.slick-next:before {
+	color: rgb(185 28 28) !important;
+	font-size: 30px !important;
+}
+.slick-prev,
+.slick-next {
+	top: 30% !important;
+	width: 30px !important;
+	height: 30px !important;
+	z-index: 1;
+}
+.slick-next {
+	right: 5px !important;
+}
+
+.slick-prev {
+	left: 5px !important;
+}
+
+@media only screen and (min-width: 1536px) {
+	.slick-prev:before,
+	.slick-next:before {
+		font-size: 40px !important;
+	}
+	.slick-prev,
+	.slick-next {
+		width: 40px !important;
+		height: 40px !important;
+	}
 }
