@@ -26,7 +26,7 @@ const MenuPage = async () => {
 	return (
 		<div className="p-4 lg:px-10 xl:px-40 min-h-[calc(100vh-6rem)] md:min-h-[calc(100vh-15rem)] flex flex-col lg:flex-row items-center">
 			{menu
-				.sort((a, b) => a.order - b.order)
+				?.sort((a, b) => a.order - b.order)
 				.map((category) => (
 					<Link
 						href={`/menu/${category.slug}`}

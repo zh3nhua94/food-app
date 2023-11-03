@@ -44,7 +44,7 @@ const Featured = ({ featuredProducts }: { featuredProducts: ProductType[] }) => 
 			{/* WRAPPER */}
 			<Slider {...settings}>
 				{/* SINGLE ITEM */}
-				{featuredProducts.map((item) => (
+				{featuredProducts?.map((item) => (
 					<div
 						key={item.id}
 						className="w-screen !h-[60vh] min-h-[500px] !flex flex-col items-center justify-around p-4 hover:bg-orange-50 transition-all duration-300 md:w-[50vw] xl:w-[33vw] xl:!h-[90vh]"
