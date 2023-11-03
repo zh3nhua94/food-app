@@ -3,21 +3,24 @@ import { MenuType } from "@/types/types";
 import Link from "next/link";
 import React from "react";
 
-const MenuPage = async () => {
-	const getData = async () => {
-		const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/categories");
+const getData = async () => {
+	const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/categories", {
+		cache: "no-store",
+	});
 
-		if (!res.ok) {
-			throw new Error("Failed to retrieve categories");
-		}
-		if (res.headers.get("Content-Type") === "text/html") {
-			console.log(res.headers.get("Content-Type"));
-			return null;
-		}
-		const resultTest = await res.text();
-		const result = await JSON.parse(resultTest);
-		return result;
-	};
+	if (!res.ok) {
+		throw new Error("Failed to retrieve categories");
+	}
+	if (res.headers.get("Content-Type") === "text/html") {
+		console.log(res.headers.get("Content-Type"));
+		return null;
+	}
+	const resultTest = await res.text();
+	const result = await JSON.parse(resultTest);
+	return result;
+};
+
+const MenuPage = async () => {
 	const menu: MenuType = await getData();
 
 	return (
