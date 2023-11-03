@@ -18,12 +18,12 @@ export default async function Home() {
 
 		// return res.data;
 	};
-	const featuredProducts = await getData();
+	// const featuredProducts = await getData();
 
 	return (
 		<main className="">
 			<Slider />
-			<Featured featuredProducts={featuredProducts} />
+			{/* <Featured featuredProducts={featuredProducts} /> */}
 			<Offer />
 		</main>
 	);
