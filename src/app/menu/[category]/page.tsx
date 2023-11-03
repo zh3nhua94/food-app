@@ -12,9 +12,9 @@ const CategoryPage = async ({ params }: Props) => {
 			cache: "no-store",
 		});
 
-		if (!res.ok) {
-			throw new Error("Failed to retrieve item");
-		}
+		// if (!res.ok) {
+		// 	throw new Error("Failed to retrieve item");
+		// }
 		return res.json();
 	};
 

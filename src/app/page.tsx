@@ -9,9 +9,9 @@ const getData = async () => {
 		cache: "no-store",
 	});
 
-	if (!res.ok) {
-		throw new Error("Failed to retrieve items");
-	}
+	// if (!res.ok) {
+	// 	throw new Error("Failed to retrieve items");
+	// }
 	console.log(res.headers.get("Content-type"));
 	const result = await res.json();
 	// console.log(result);

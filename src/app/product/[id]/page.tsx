@@ -11,9 +11,9 @@ const SingleProductPage = async ({ params }: { params: { id: string } }) => {
 			cache: "no-store",
 		});
 
-		if (!res.ok) {
-			throw new Error("Failed to retrieve items");
-		}
+		// if (!res.ok) {
+		// 	throw new Error("Failed to retrieve items");
+		// }
 		const result = await res.json();
 		return result;
 	};

@@ -8,9 +8,9 @@ const getData = async () => {
 		cache: "no-store",
 	});
 
-	if (!res.ok) {
-		throw new Error("Failed to retrieve categories");
-	}
+	// if (!res.ok) {
+	// 	throw new Error("Failed to retrieve categories");
+	// }
 	if (res.headers.get("Content-Type") === "text/html") {
 		console.log(res.headers.get("Content-Type"));
 		return null;
