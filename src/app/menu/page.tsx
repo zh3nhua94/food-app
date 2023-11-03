@@ -14,7 +14,8 @@ const MenuPage = async () => {
 			console.log(res.headers.get("Content-Type"));
 			return null;
 		}
-		const result = await res.json();
+		const resultTest = await res.text();
+		const result = await JSON.parse(resultTest);
 		return result;
 	};
 	const menu: MenuType = await getData();

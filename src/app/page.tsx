@@ -11,12 +11,9 @@ export default async function Home() {
 		if (!res.ok) {
 			throw new Error("Failed to retrieve items");
 		}
-		if (res.headers.get("Content-Type") === "text/html") {
-			console.log(res.headers.get("Content-Type"));
-			return null;
-		}
-		console.log(res.headers.get("Content-Type"));
-		const result = await res.json();
+		const resultTest = await res.text();
+		const result = await JSON.parse(resultTest);
+		console.log(result);
 		return result;
 
 		// return res.data;

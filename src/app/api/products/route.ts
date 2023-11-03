@@ -31,19 +31,3 @@ export const POST = async (req: NextRequest) => {
 		return new NextResponse(JSON.stringify({ message: "Something went wrong!" }), { status: 500 });
 	}
 };
-
-// //CREATE PRODUCT
-// export const POST = async (req: NextRequest) => {
-// 	try {
-// 		const body = await req.json();
-// 		console.log(body);
-// 		// const product = await prisma.product.create({
-// 		// 	data: body,
-// 		// });
-// 		// return new NextResponse(JSON.stringify(product), { status: 201 });
-// 		return new NextResponse(JSON.stringify("test"), { status: 201 });
-// 	} catch (error) {
-// 		console.log(error);
-// 		return new NextResponse(JSON.stringify({ message: "Something went wrong!" }), { status: 500 });
-// 	}
-// };
