@@ -51,11 +51,16 @@ const Featured = ({ featuredProducts }: { featuredProducts: ProductType[] }) => 
 					>
 						{/* IMAGE CONTAINER */}
 						{item.img && (
-							<Link
+							<div
 								className="relative flex-1 w-full hover:rotate-[60deg] transition-all duration-500 mb-3"
-								href={`/product/${item.id}`}
+								// href={`/product/${item.id}`}
 							>
-								<Image
+								<img
+									className="object-contain pointer-events-none w-full h-full absolute"
+									src={item.img}
+									alt=""
+								/>
+								{/* <Image
 									className="object-contain pointer-events-none"
 									src={item.img}
 									alt=""
@@ -63,8 +68,8 @@ const Featured = ({ featuredProducts }: { featuredProducts: ProductType[] }) => 
 									sizes="100%"
 									draggable="false"
 									priority={true}
-								/>
-							</Link>
+								/> */}
+							</div>
 						)}
 						{/* TEXT CONTAINER */}
 						<div className="flex-1 flex flex-col gap-4 items-center text-center justify-center ">
