@@ -12,7 +12,7 @@ const MenuPage = async () => {
 		}
 		if (res.headers.get("Content-Type") === "text/html") {
 			console.log(res.headers.get("Content-Type"));
-			return;
+			return null;
 		}
 		const result = await res.json();
 		return result;

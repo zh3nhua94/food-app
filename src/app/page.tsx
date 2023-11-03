@@ -13,7 +13,7 @@ export default async function Home() {
 		}
 		if (res.headers.get("Content-Type") === "text/html") {
 			console.log(res.headers.get("Content-Type"));
-			return;
+			return null;
 		}
 		console.log(res.headers.get("Content-Type"));
 		const result = await res.json();
