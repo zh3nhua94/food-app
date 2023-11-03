@@ -11,7 +11,8 @@ export default async function Home() {
 		if (!res.ok) {
 			throw new Error("Failed to retrieve items");
 		}
-		return res.json();
+		const result = await res.json();
+		return result;
 
 		// return res.data;
 	};

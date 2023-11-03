@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Countdown from "react-countdown";
 
 // Ending date
@@ -8,11 +8,20 @@ const endingDate = new Date("2023-10-25");
 const inifiniteTime = Date.now() + 108000000; //add 30 hours = 108000s
 
 const CountDown = () => {
+	const [isLoaded, setIsLoaded] = useState(false);
+	useEffect(() => {
+		setIsLoaded(true);
+	}, []);
+
 	return (
-		<Countdown
-			className="font-bold text-5xl text-amber-400"
-			date={inifiniteTime}
-		/>
+		<>
+			{isLoaded && (
+				<Countdown
+					className="font-bold text-5xl text-amber-400"
+					date={inifiniteTime}
+				/>
+			)}
+		</>
 	);
 };
 

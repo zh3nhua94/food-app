@@ -21,6 +21,7 @@ const CartIcon = () => {
 					src="/cart.png"
 					alt=""
 					fill={true}
+					sizes="100%"
 				/>
 			</div>
 			<span>Cart ({totalItems})</span>

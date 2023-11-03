@@ -59,7 +59,8 @@ const Featured = ({ featuredProducts }: { featuredProducts: ProductType[] }) => 
 									className="object-contain pointer-events-none"
 									src={item.img}
 									alt=""
-									fill
+									fill={true}
+									sizes="100%"
 									draggable="false"
 								/>
 							</Link>

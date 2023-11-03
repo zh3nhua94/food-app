@@ -61,6 +61,7 @@ const Slider = () => {
 					src={data[currentSlide].image}
 					alt=""
 					fill
+					sizes="100%"
 				/>
 			</div>
 		</div>

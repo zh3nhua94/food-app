@@ -10,7 +10,8 @@ const MenuPage = async () => {
 		if (!res.ok) {
 			throw new Error("Failed to retrieve categories");
 		}
-		return res.json();
+		const result = await res.json();
+		return result;
 	};
 	const menu: MenuType = await getData();
 
