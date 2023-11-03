@@ -62,6 +62,7 @@ const Featured = ({ featuredProducts }: { featuredProducts: ProductType[] }) => 
 									fill={true}
 									sizes="100%"
 									draggable="false"
+									priority
 								/>
 							</Link>
 						)}
