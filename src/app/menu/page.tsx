@@ -10,6 +10,10 @@ const MenuPage = async () => {
 		if (!res.ok) {
 			throw new Error("Failed to retrieve categories");
 		}
+		if (res.headers.get("Content-Type") === "text/html") {
+			console.log(res.headers.get("Content-Type"));
+			return;
+		}
 		const result = await res.json();
 		return result;
 	};
