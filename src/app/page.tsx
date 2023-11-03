@@ -12,9 +12,11 @@ const getData = async () => {
 	// if (!res.ok) {
 	// 	throw new Error("Failed to retrieve items");
 	// }
+	if (res.headers.get("Content-Type") !== "application/json") {
+		return null;
+	}
 	console.log(res.headers.get("Content-type"));
 	const result = await res.json();
-	// console.log(result);
 	return result;
 
 	// return res.data;

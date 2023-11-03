@@ -11,10 +11,10 @@ const getData = async () => {
 	// if (!res.ok) {
 	// 	throw new Error("Failed to retrieve categories");
 	// }
-	if (res.headers.get("Content-Type") === "text/html") {
-		console.log(res.headers.get("Content-Type"));
+	if (res.headers.get("Content-Type") !== "application/json") {
 		return null;
 	}
+	console.log(res.headers.get("Content-Type"));
 	const resultTest = await res.text();
 	const result = await JSON.parse(resultTest);
 	return result;
