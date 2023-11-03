@@ -11,7 +11,7 @@ export const GET = async (req: NextRequest) => {
 				...(cat ? { catSlug: cat } : { isFeatured: true }),
 			},
 		});
-		return new NextResponse(JSON.stringify(products), { status: 200 });
+		return NextResponse.json(products, { status: 200 });
 	} catch (error) {
 		console.log(error);
 		return new NextResponse(JSON.stringify({ message: "Something went wrong!" }), { status: 500 });
