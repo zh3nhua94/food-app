@@ -62,7 +62,7 @@ const Slider = () => {
 					alt=""
 					fill
 					sizes="100%"
-					priority
+					priority={true}
 				/>
 			</div>
 		</div>
