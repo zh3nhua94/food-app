@@ -25,8 +25,6 @@ export const POST = async (req: NextRequest, { params }: { params: { orderId: st
 			},
 		});
 
-		console.log(paymentIntent);
-
 		await prisma.order.update({
 			where: {
 				id: orderId,

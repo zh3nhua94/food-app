@@ -59,9 +59,6 @@ const OrdersPage = () => {
 		return aTime - bTime;
 	};
 
-	// if (isPending || status === "loading") return "Loading...";
-	console.log(data);
-
 	return (
 		<div className="p-4 min-h-[calc(100vh-9rem)] md:min-h-[calc(100vh-15rem)] lg:px-20 xl:px-40">
 			{!isPending && status === "authenticated" && (
