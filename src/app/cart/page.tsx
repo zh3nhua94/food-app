@@ -19,7 +19,7 @@ const CartPage = () => {
 	const handleCheckout = async () => {
 		if (!session) {
 			toast("Please Login to Checkout.");
-			router.push("/login");
+			router.push("/login?redirect=checkout");
 		} else {
 			console.log(process.env.NEXT_PUBLIC_API_URL);
 			console.log(process.env.NEXT_PUBLIC_API_URL + `/api/orders`);

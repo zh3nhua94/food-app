@@ -56,7 +56,7 @@ const OrdersPage = () => {
 	const sortByDate = (a: OrderType, b: OrderType) => {
 		const aTime = new Date(a.createdAt).getTime();
 		const bTime = new Date(b.createdAt).getTime();
-		return aTime - bTime;
+		return bTime - aTime;
 	};
 
 	return (

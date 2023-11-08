@@ -127,6 +127,7 @@ const AddPage = () => {
 			});
 			const data = await res.json();
 			router.push(`/product/${data.id}`);
+			toast.success("The new product is added successfully!");
 		} catch (error) {
 			console.log(error);
 		}

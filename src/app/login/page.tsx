@@ -3,18 +3,26 @@ import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 
 const LoginPage = () => {
 	const { status } = useSession();
 	const router = useRouter(); //useRouter() must from "next/navigation"
-	// console.log(status);
+	const redirect = useSearchParams().get("redirect");
 
 	useEffect(() => {
 		if (status === "authenticated") {
 			router.push("/");
 		}
 	}, [status, router]);
+
+	const handleLogin = () => {
+		if (redirect === "checkout") {
+			signIn("google", { callbackUrl: "/cart" });
+		} else {
+			signIn("google");
+		}
+	};
 
 	return (
 		<>
@@ -37,7 +45,7 @@ const LoginPage = () => {
 							<p>Log into your account or create a new one using social buttons</p>
 							<button
 								className="flex gap-4 p-4 ring-1 ring-orange-200 rounded-md hover:ring-2 hover:ring-orange-300 transition-all"
-								onClick={() => signIn("google")}
+								onClick={handleLogin}
 							>
 								<Image
 									src="/google.png"
